@@ -7,10 +7,20 @@
     <title>Morana - Be my Valentine</title>
 </head>
 <body>
+    <style>
+        .yes {
+          background-color: green;
+        }
+        .no {
+          background-color: red;
+        }
+      </style>
 
     <div class="wrapper">
   
-        <h2>Hi Morana. Will chu be my valentine?</h2>
+        <h2>Hi Morana. Will chu be my valentine? <br> 
+            <button id="yesButton" class="yes" onclick="checkAndRedirect(this)">Yes</button>
+<button id="noButton" class="no" onclick="switchText()">No</button>
         
         <div class="pikachu">
           
@@ -50,6 +60,33 @@
       <div class="signature">
           <p>From Milan with <i class="much-heart"></i></p>
       </div>
+
+      <script>
+function switchText() {
+  var yesButton = document.getElementById('yesButton');
+  var noButton = document.getElementById('noButton');
+  
+  // Swap button text
+  var temp = yesButton.textContent;
+  yesButton.textContent = noButton.textContent;
+  noButton.textContent = temp;
+
+  // Swap button class
+  yesButton.classList.toggle('yes');
+  yesButton.classList.toggle('no');
+  noButton.classList.toggle('yes');
+  noButton.classList.toggle('no');
+}
+
+function checkAndRedirect(button) {
+  if (button.textContent === 'Yes') {
+    window.location.href = 'https://example.com';
+  }
+  else{
+    switchText()
+  }
+}
+        </script>
 </body>
 <script src="script.js"></script>
 </html>
