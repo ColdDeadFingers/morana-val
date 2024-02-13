@@ -8,6 +8,14 @@
 </head>
 <body>
     <style>
+    button {
+    color: black;
+    font-weight: bold; 
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer; 
+    text-decoration: none; 
+  }
         .yes {
           background-color: green;
         }
@@ -80,7 +88,7 @@ function switchText() {
 
 function checkAndRedirect(button) {
   if (button.textContent === 'Yes') {
-    window.location.href = 'https://example.com';
+    window.location.href = 'happy.html';
   }
   else{
     switchText()
@@ -88,5 +96,4 @@ function checkAndRedirect(button) {
 }
         </script>
 </body>
-<script src="script.js"></script>
 </html>
